@@ -1,19 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { ModeToggle } from "@/components/ModeToggle";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title="Elloani Ross Pitogo | Software Engineer">
+  <header class="relative z-20 w-full max-w-4xl mx-auto mt-8 px-7 xl:px-0">
+    <ModeToggle client:load />
+  </header>
   <main
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
     <h1
       class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
     >
-      Hello, I'm <span>Elloani Pitogo</span>.
+      {t("hero.title")}
     </h1>
     <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-      I'm a Software Engineer based in The Philippines. I focus in Front-End Web
-      Development for over 6 years now.
+      {t("hero.description")}
     </p>
   </main>
 </Layout>
