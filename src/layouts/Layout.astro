@@ -1,4 +1,7 @@
 ---
+import "../styles/global.css";
+import { ModeToggle } from "@/components/ModeToggle";
+
 interface Props {
   title: string;
 }
@@ -7,6 +10,30 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,6 +44,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-white text-zinc-900 dark:bg-neutral-950 dark:text-gray-400">
+    <ModeToggle client:load />
     <slot />
   </body>
 </html>
