@@ -12,7 +12,7 @@ export const ui = {
       Development for over 6 years now.`,
   },
   ja: {
-    "hero.title": "こんにちは、エロアニ・ピトゴです。",
+    "hero.title": "こんにちは、エルワニ・ピトゴ です。",
     "hero.description":
       "私はフィリピンを拠点とするソフトウェア エンジニアです。6 年以上にわたり、フロントエンド Web 開発に注力しています。",
   },
