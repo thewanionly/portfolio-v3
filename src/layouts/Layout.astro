@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import { ModeToggle } from "@/components/ModeToggle";
 import { getLangFromUrl } from "../i18n/utils";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -44,6 +44,7 @@ const lang = getLangFromUrl(Astro.url);
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <Analytics />
   </head>
   <body class="bg-white text-zinc-900 dark:bg-neutral-950 dark:text-gray-400">
     <slot />
