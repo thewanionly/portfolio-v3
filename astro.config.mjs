@@ -11,9 +11,15 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind({
-    applyBaseStyles: false,
-  }), icon()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    icon({
+      iconDir: "src/assets/icons",
+    }),
+  ],
   output: "server",
   adapter: vercel(),
 });
