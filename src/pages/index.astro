@@ -20,50 +20,57 @@ const t = useTranslations(lang);
   <main
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
-    <h1
-      class="mb-8 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white text-center md:text-start"
-    >
-      {t("hero.title")}
-    </h1>
+    <section id="hero" class="md:grid md:grid-cols-[1fr_max-content] md:gap-4">
+      <h1
+        class="mb-8 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white text-center md:text-start"
+      >
+        {t("hero.title")}
+      </h1>
 
-    <Image
-      src={myImage}
-      alt="Elloani Ross Pitogo wearing beige long sleeve, sling bag, and watch with hands together placed in a table"
-      loading="eager"
-      decoding="auto"
-      style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"
-      class="w-[184px] h-[184px] object-cover md:w-[255px] md:h-[255px] mx-auto mb-4"
-    />
+      <Image
+        class="w-[184px] h-[184px] object-cover md:w-[255px] md:h-[255px] mx-auto mb-4 md:row-span-4"
+        src={myImage}
+        alt="Elloani Ross Pitogo wearing beige long sleeve, sling bag, and watch with hands together placed in a table"
+        loading="eager"
+        decoding="auto"
+        style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"
+      />
 
-    <p
-      class="mb-6 text-base text-neutral-600 dark:text-neutral-400 text-center md:text-start"
-    >
-      {t("hero.description")}
-    </p>
+      <p
+        class="mb-6 text-base text-neutral-600 dark:text-neutral-400 text-center md:text-start"
+      >
+        {t("hero.description")}
+      </p>
 
-    <p
-      class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200 text-center md:text-start"
-    >
-      My skills includes:
-    </p>
-    <ul
-      class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400 text-center md:text-start"
-    >
-      <li>HTML, CSS, JavaScript</li>
-      <li>React.js</li>
-      <li>TypeScript</li>
-      <li>Next.js</li>
-      <li>and <a href="#skills">more...</a></li>
-    </ul>
+      <div>
+        <p
+          class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200 text-center md:text-start"
+        >
+          My skills includes:
+        </p>
+        <ul
+          class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400 text-center md:text-start"
+        >
+          <li>HTML, CSS, JavaScript</li>
+          <li>React.js</li>
+          <li>TypeScript</li>
+          <li>Next.js</li>
+          <li>and <a href="#skills">more...</a></li>
+        </ul>
+      </div>
 
-    <div class="flex gap-4 mt-5 justify-center md:justify-start">
-      <a href="https://github.com/thewanionly/" target="_blank">
-        <Icon name="github" class="text-2xl" />
-      </a>
-      <a href="https://www.linkedin.com/in/pitogoelloaniross/" target="_blank">
-        <Icon name="linkedin" class="text-2xl" />
-      </a>
-    </div>
+      <div class="flex gap-4 mt-5 justify-center md:justify-start">
+        <a href="https://github.com/thewanionly/" target="_blank">
+          <Icon name="github" class="text-2xl" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/pitogoelloaniross/"
+          target="_blank"
+        >
+          <Icon name="linkedin" class="text-2xl" />
+        </a>
+      </div>
+    </section>
 
     <Separator className="mt-12 w-[80%] mx-auto" />
   </main>
