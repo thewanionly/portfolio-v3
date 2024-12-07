@@ -6,6 +6,7 @@ import { Icon } from "astro-icon/components";
 import { Separator } from "@/components/ui/separator";
 import { Image } from "astro:assets";
 import myImage from "../assets/images/me.jpg";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,7 +15,8 @@ const t = useTranslations(lang);
 <Layout title="Elloani Ross Pitogo | Software Engineer">
   <div class="flex flex-col min-h-screen">
     <header class="relative z-20 w-full max-w-4xl mx-auto mt-8 px-7 xl:px-0">
-      <div class="flex justify-end">
+      <div class="flex justify-end gap-4">
+        <!-- <LanguageSelector client:load /> -->
         <ModeToggle client:load />
       </div>
     </header>
