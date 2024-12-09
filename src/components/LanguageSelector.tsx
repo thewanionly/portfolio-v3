@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { languages } from "@/i18n/ui";
 
 enum Language {
   English = "en",
@@ -42,12 +43,11 @@ export function LanguageSelector() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage(Language.English)}>
-          English
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage(Language.Japanese)}>
-          日本語
-        </DropdownMenuItem>
+        {Object.entries(languages).map(([lang, label]) => (
+          <DropdownMenuItem>
+            <a href={`?lang=${lang}`}>{label}</a>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
