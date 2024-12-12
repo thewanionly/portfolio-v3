@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { getLangFromUrl } from "../i18n/utils";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -37,6 +38,17 @@ const lang = getLangFromUrl(Astro.url);
   }
 </script>
 
+<script is:inline>
+  function applyTheme() {
+    localStorage.theme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }
+
+  document.addEventListener("astro:after-swap", applyTheme);
+  applyTheme();
+</script>
+
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
@@ -47,6 +59,7 @@ const lang = getLangFromUrl(Astro.url);
     <title>{title}</title>
     <Analytics />
     <SpeedInsights />
+    <ViewTransitions />
   </head>
   <body class="bg-white text-zinc-900 dark:bg-neutral-950 dark:text-gray-400">
     <slot />
