@@ -45,7 +45,9 @@ export function LanguageSelector() {
       <DropdownMenuContent align="end">
         {Object.entries(languages).map(([lang, label]) => (
           <DropdownMenuItem key={lang}>
-            <a href={`?lang=${lang}`}>{label}</a>
+            <a className="w-full" href={`?lang=${lang}`}>
+              {label}
+            </a>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
