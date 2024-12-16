@@ -15,6 +15,7 @@ export const ui = {
     "projects.title": "My Projects",
     "projects.description":
       "Here are some of my recent projects. I'm always working on something new, so check back often!",
+    "projects.cta": "View all my projects",
   },
   ja: {
     "hero.title": "こんにちは、エルワニ・ピトゴ です。",
@@ -25,5 +26,6 @@ export const ui = {
     "projects.title": "My Projects",
     "projects.description":
       "Here are some of my recent projects. I'm always working on something new, so check back often!",
+    "projects.cta": "すべてのプロジェクトを見る",
   },
 } as const;
