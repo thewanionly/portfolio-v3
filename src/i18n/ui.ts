@@ -23,9 +23,9 @@ export const ui = {
       "私 は フィリピン を 拠点 と する ソフトウェア エンジニア です。6年 以上 に わたり、フロントエンド Web 開発 に 注力して います。",
     "hero.skills.title": "私の スキル には 以 が 含まれます:",
     "hero.skills.and.more": "さらに...",
-    "projects.title": "My Projects",
+    "projects.title": "私のプロジェクト",
     "projects.description":
-      "Here are some of my recent projects. I'm always working on something new, so check back often!",
+      "こちらは私の最近のプロジェクトです。常に新しいことに取り組んでいるので、ぜひ定期的にチェックしてください！",
     "projects.cta": "すべてのプロジェクトを見る",
   },
 } as const;
