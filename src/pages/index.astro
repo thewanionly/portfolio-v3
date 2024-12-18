@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { ModeToggle } from "@/components/ModeToggle";
 import { Icon } from "astro-icon/components";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { ModeToggle } from "@/components/ModeToggle";
 import { Separator } from "@/components/ui/separator";
-import { Image } from "astro:assets";
-import myImage from "../assets/images/me.jpg";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { Link } from "@/components/Link";
+import HeroSection from "@/components/sections/hero.astro";
+
+import Layout from "../layouts/Layout.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,61 +24,7 @@ const t = useTranslations(lang);
     <main
       class="flex-1 relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
     >
-      <section
-        id="hero"
-        class="md:grid md:grid-cols-[1fr_max-content] md:gap-4"
-      >
-        <h1
-          class="mb-8 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white text-center md:text-start"
-        >
-          {t("hero.title")}
-        </h1>
-
-        <Image
-          class="w-[184px] h-[184px] object-cover md:w-[255px] md:h-[255px] mx-auto mb-4 md:row-span-4"
-          src={myImage}
-          alt="Elloani Ross Pitogo wearing beige long sleeve, sling bag, and watch with hands together placed in a table"
-          loading="eager"
-          decoding="auto"
-          style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"
-        />
-
-        <p
-          class="mb-6 text-base text-neutral-600 dark:text-neutral-400 text-center md:text-start"
-        >
-          {t("hero.description")}
-        </p>
-
-        <div>
-          <p
-            class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200 text-center md:text-start"
-          >
-            {t("hero.skills.title")}
-          </p>
-          <ul
-            class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400 text-center md:text-start"
-          >
-            <li>HTML, CSS, JavaScript</li>
-            <li>React.js</li>
-            <li>TypeScript</li>
-            <li>Next.js</li>
-            <li><a href="#skills">{t("hero.skills.and.more")}</a></li>
-          </ul>
-        </div>
-
-        <div class="flex gap-4 mt-5 justify-center md:justify-start">
-          <a href="https://github.com/thewanionly/" target="_blank">
-            <Icon name="github" class="text-2xl hover:text-white" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/pitogoelloaniross/"
-            target="_blank"
-          >
-            <Icon name="linkedin" class="text-2xl hover:text-white" />
-          </a>
-        </div>
-      </section>
-
+      <HeroSection />
       <!-- <Separator className="my-12 w-[80%] mx-auto" /> -->
 
       <!-- <section id="projects" class="max-w-4xl mx-auto px-7 lg:px-0">
