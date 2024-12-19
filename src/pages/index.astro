@@ -1,16 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { ModeToggle } from "@/components/ModeToggle";
 import { Separator } from "@/components/ui/separator";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import HeroSection from "@/components/sections/hero.astro";
+import ProjectsSection from "@/components/sections/projects.astro";
 
 import Layout from "../layouts/Layout.astro";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <Layout title="Elloani Ross Pitogo | Software Engineer">
@@ -25,28 +22,8 @@ const t = useTranslations(lang);
       class="flex-1 relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
     >
       <HeroSection />
-      <!-- <Separator className="my-12 w-[80%] mx-auto" /> -->
-
-      <!-- <section id="projects" class="max-w-4xl mx-auto px-7 lg:px-0">
-        <h2
-          class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100"
-        >
-          {t("projects.title")}
-        </h2>
-
-        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          {t("projects.description")}
-        </p>
-
-        <div class="flex items-center justify-center w-full py-5">
-          <Link
-            href="/projects"
-            className="inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900 hover:no-underline"
-          >
-            {t("projects.cta")}
-          </Link>
-        </div>
-      </section>  -->
+      <Separator className="my-12 w-[80%] mx-auto" />
+      <ProjectsSection />
     </main>
     <footer
       class="my-12 bg-white border-t sm:mt-20 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800"
