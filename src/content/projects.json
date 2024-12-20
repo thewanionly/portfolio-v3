@@ -1,14 +1,14 @@
 [
   {
     "title": "Entertainment Web App",
-    "image": "entertainment-web-app.png",
+    "image": "src/assets/images/entertainment-web-app.png",
     "description": "A web app that lets you search for your favourite movies and TV shows and bookmark them.",
     "projectUrl": "https://entertainment-web-app-wani.vercel.app",
     "sourceCodeUrl": "https://github.com/thewanionly/entertainment-web-app"
   },
   {
     "title": "Audiophile",
-    "image": "audiophile-wani.png",
+    "image": "src/assets/images/audiophile-wani.png",
     "description": "An e-commerce web application built with NextJS13 using the app directory, making use of Server Side Rendering (SSR) and React Server Components (RSC).",
     "projectUrl": "https://audiophile-wani.vercel.app",
     "sourceCodeUrl": "https://github.com/thewanionly/audiophile"
